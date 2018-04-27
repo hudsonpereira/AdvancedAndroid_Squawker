@@ -86,6 +86,13 @@ public class MainActivity extends AppCompatActivity implements
         // Start the loader
         getSupportLoaderManager().initLoader(LOADER_ID_MESSAGES, null, this);
 
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+
+        if (bundle != null && bundle.containsKey("name")) {
+            Log.i(LOG_TAG, "onCreate: " + bundle.getString("name"));
+        }
+
     }
 
     @Override
